@@ -23,6 +23,14 @@ Route::get('/informes', ['as'=>'site.informes', function(){
     return view('site.informes');
 }]);
 
-Auth::routes();
+Route::get('/informes/{id}/{titulo?}',['as'=>'site.info', function () {
+    return view('site.info');
+}]);
+
+Route::get('/admin/login',['as'=>'admin.login', function () {
+    return view('admin.login.index');
+}]);
+
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
