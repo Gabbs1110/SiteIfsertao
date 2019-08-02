@@ -12,3 +12,23 @@ body {
 main {
   flex: 1 !important;
 }
+
+
+
+#div1{
+   
+    height:500px;
+    border:solid 1px;
+    border-radius:20px;
+  }
+
+  #fieldtext { 
+    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 15x;
+}
+#margincontent{
+  height: 15px;
+  
+}

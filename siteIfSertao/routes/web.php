@@ -31,6 +31,22 @@ Route::get('/admin/login',['as'=>'admin.login', function () {
     return view('admin.login.index');
 }]);
 
-//Auth::routes();
+Route::post('/admin/login',['as'=>'admin.login', 
+'uses'=>'Admin\UsuarioController@login'
+]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Auth::routes();
+Route::middleware(['auth','auth.basic'])->group(function(){
+
+    Route::get('/admin',['as'=>'admin.principal', function () {
+        return view('admin.principal.index');
+    }]);
+    Route::get('/admin/cad',['as'=>'admin.login.cadastro', function () {
+        return view('admin.login.cadastro');
+    }]);
+
+    Route::get('/admin/informes/cad',['as'=>'admin.CadInformes', function () {
+        return view('admin.CadInformes.formInforme');
+    }]);
+    
+});
